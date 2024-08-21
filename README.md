@@ -1,8 +1,8 @@
-# 📚 PyGitrefer: Your GitHub-Powered Bibliography Manager!　✨
+# 📚 PyGitrefer: Your GitHub-Powered Bibliography Manager!
 
 Welcome to _PyGitrefer_, your daily assistant for effortlessly managing bibliographic information directly within your GitHub repositories!
 
-👋Say goodbye to messy spreadsheets and hello to a streamlined, version-controlled, and collaborative approach to keeping your research references in order.
+Say goodbye to messy spreadsheets and hello to a streamlined, version-controlled, and collaborative approach to keeping your research references in order.
 
 ## What is PyGitrefer?
 
@@ -193,6 +193,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 Happy referencing!
 
-Let PyGitrefer be your trusted guide in the vast world of academic literature. 🛰️
-
----
+Let PyGitrefer be your trusted guide in the vast world of academic literature. 🚢🧭
