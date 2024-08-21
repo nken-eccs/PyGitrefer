@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "pygitrefer"
+version = "0.1.0"
+description = "{GitHub-Powered Bibliography Manager}"
+authors = ["Ken Nakamura <nakamuraken1007@g.ecc.u-tokyo.ac.jp>"]
+repository = "https://github.com/nken-eccs/PyGitrefer"
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "pygitrefer" },
+]
+
+
+[tool.poetry.scripts]
+gitrefer = "pygitrefer.cli:main"
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.32.3"
+pdf2doi = "^1.6"
+google-generativeai = "^0.7.2"
+rich = "^13.7.1"
+pykakasi = "^2.3.0"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
