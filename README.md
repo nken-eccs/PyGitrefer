@@ -19,8 +19,6 @@ PyGitrefer is a perfect tool for researchers, students, and anyone who wants to 
 
 ## Getting Started 🚀
 
-### Requirements
-
 ### Installation
 
 1. **Install directly from GitHub:**
