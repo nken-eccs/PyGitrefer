@@ -11,6 +11,7 @@ from pygitrefer.const import CROSSREF_TO_BIB
 from pygitrefer.git_api import GitHubAPI
 import requests
 import json
+import os
 from datetime import datetime
 from rich import print
 
@@ -561,7 +562,7 @@ class ReferenceManager:
         safe_filename = sanitize_filename(ID)
         raw_file_path = f"{self.dir}/raw/{safe_filename}.json"
         self.git_api._delete_file(
-            raw_file_path, f"Delete raw data for [bold blue]{ID}[/]", required=False
+            raw_file_path, f"Delete raw data for {ID}", required=False
         )
         # Delete reference data
         del self.references[ID]
@@ -645,12 +646,11 @@ class ReferenceManager:
             ID (str): The ID of the reference.
             path_to_file (str): The path to the data file.
         """
-        path_to_file = path_to_file.replace("\\", "/")
         if ID not in self.references:
             print(f"Reference not found for ID: [bold blue]{ID}[/]")
             return
         safe_filename = sanitize_filename(ID)
-        file_name = path_to_file.split("/")[-1]
+        file_name = os.path.basename(path_to_file)
         if file_name in self.references[ID]["files"]:
             print(f"Data file: {file_name} already exists for [bold blue]{ID}[/].")
             return
@@ -662,7 +662,7 @@ class ReferenceManager:
                 return
             self.git_api._create_file(
                 f"{self.dir}/data/{safe_filename}/{file_name}",
-                f"Add data file: {file_name} for [bold blue]{ID}[/]",
+                f"Add data file: {file_name} for {ID}",
                 file_content,
                 is_binary=True,
             )
@@ -694,7 +694,7 @@ class ReferenceManager:
             file_path = f"{self.dir}/data/{safe_filename}/{file_name}"
             self.git_api._delete_file(
                 file_path,
-                f"Delete data file: {file_name} for [bold blue]{ID}[/]",
+                f"Delete data file: {file_name} for {ID}",
             )
             self.references[ID]["files"].remove(file_name)
             self.references[ID]["updated_at"] = datetime.now().isoformat()
