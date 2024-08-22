@@ -45,14 +45,14 @@ You need to set up the following environment variables before you can start usin
 2. **Repository Information (`GITREFER_REPO`):**
    - Determine the owner and name of your GitHub repository (e.g., `owner/repository`).
 
-   > [!WARNING]
-   > If you start with a new repository, please create a repository first before initializing PyGitrefer.
+> [!NOTE]
+> If you start with a new repository, please create a repository first before initializing PyGitrefer.
 
 3. **Gemini API Key (Optional) (`GITREFER_GEMINI_API_KEY`):**
    - If you want to use the AI-powered reference extraction feature, please get an API key from [Google AI Studio](https://aistudio.google.com/). Anyone who has a Google account can sign up for free.
 
-   > [!NOTE]
-   > Currently, Gemini Flash is set as the default model. You can make requests up to 1500 times per day [[source](https://ai.google.dev/pricing)].
+> [!NOTE]
+> Currently, Gemini Flash is set as the default model. You can make requests up to 1500 times per day [[source](https://ai.google.dev/pricing)].
 
 The easiest way to set these environment variables is to create a `.env` file in the root directory of your project and add the following lines:
 
