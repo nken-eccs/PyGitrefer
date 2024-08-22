@@ -43,7 +43,7 @@ You need to set up the following environment variables before you can start usin
 2. **Repository Information (`GITREFER_REPO`):**
    - Determine the owner and name of your GitHub repository (e.g., `owner/repository`).
 
-3. **Gemini API Key (Optional) (`GEMINI_API_KEY`):**
+3. **Gemini API Key (Optional) (`GITREFER_GEMINI_API_KEY`):**
    - If you want to use the AI-powered reference extraction feature, please get an API key from [Google AI Studio](https://aistudio.google.com/). Anyone who has a Google account can sign up for free.
    - Currently, Gemini Flash is set as the default model. You can make requests up to 1500 times per day [[source](https://ai.google.dev/pricing)].
 
@@ -52,7 +52,7 @@ The easiest way to set these environment variables is to create a `.env` file in
 ```bash
 GITREFER_TOKEN=<your_github_personal_access_token>
 GITREFER_REPO=<owner/repository>
-GEMINI_API_KEY=<your_google_ai_studio_api_key>
+GITREFER_GEMINI_API_KEY=<your_google_ai_studio_api_key>
 ```
 
 PyGitrefer will try to load these environment variables when you run the commands. It will search for the `.env` file in the current working directory or higher directories. If these environment variables are not set, you will be prompted to enter them manually.
@@ -127,31 +127,31 @@ Here's a breakdown of the commands you can use with PyGitrefer:
    gitrefer delete <ID>
    ```
 
-12. **Add Tag:**
+12. **Add Tag to Reference:**
 
    ```bash
    gitrefer add_tag <ID> <tag>
    ```
 
-13. **Remove Tag:**
+13. **Remove Tag from Reference:**
 
    ```bash
    gitrefer remove_tag <ID> <tag>
    ```
 
-14. **Add File:**
+14. **Add File to Reference:**
 
    ```bash
    gitrefer add_file <ID> <path/to/file>
    ```
 
-15. **Delete File:**
+15. **Delete File from Reference:**
 
    ```bash
    gitrefer delete_file <ID> <filename>
    ```
 
-16. **Export References:**
+16. **Export References in a Specific Format:**
 
    ```bash
    gitrefer export <format> [-t <tag>] ...
