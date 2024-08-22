@@ -19,7 +19,7 @@ class Gitrefer:
     GitRefer class to manage references on GitHub.
     """
 
-    def __init__(self, token: str = None, repo: str = None, gemini_api_key: str = None):
+    def __init__(self, token: str = None, repo: str = None, gemini_api_key: str = None, debug: bool = False) -> None:
         """
         Initialize the GitRefer class. If the token, repo, or gemini_api_key is not provided, it will load from the environment variables or prompt the user to enter.
 
@@ -31,11 +31,19 @@ class Gitrefer:
             GitHub repository name in the format "{owner}/{repo}", by default None
         gemini_api_key : str, optional
             Gemini API key, by default None
+        debug : bool, optional
+            Enable debug mode, by default False
         """
         self.token = token
         self.repo = repo
         self.gemini_api_key = gemini_api_key
-        load_dotenv(find_dotenv())
+        if debug:
+            print()
+            print("Debug mode enabled.")
+            print(f"Current directory: {os.getcwd()}")
+            print(f"Environment variables: {os.environ}")
+            print()
+        load_dotenv(find_dotenv(raise_error_if_not_found=debug))
         if not self.token:
             try:
                 self.token = os.environ["GITREFER_TOKEN"]
@@ -55,6 +63,7 @@ class Gitrefer:
                 self.gemini_api_key = input("Enter Gemini API key (optional): ").strip()
         self.git_api = GitHubAPI(github_token=self.token, repo_name=self.repo)
         self.reference_manager = ReferenceManager(self.git_api)
+
 
     def list(self) -> None:
         """

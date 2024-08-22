@@ -6,10 +6,11 @@ def main() -> None:
     """
     Main function to run the Gitrefer CLI.
     """
-    cli = Gitrefer()
-
     # Create the argument parser
     parser = argparse.ArgumentParser(description="Manage references using GitRefer.")
+
+    # Add the debug argument
+    parser.add_argument("--debug", type=bool, default=False, help="Enable debug mode")
 
     # Subcommands
     subparsers = parser.add_subparsers(dest="command")
@@ -100,6 +101,9 @@ def main() -> None:
     # Parse the arguments
     args = parser.parse_args()
 
+    # Create Gitrefer instance with debug mode
+    cli = Gitrefer(debug=args.debug)
+
     # Execute the commands based on the arguments
     if args.command == "list":
         cli.list()
@@ -178,6 +182,7 @@ def main() -> None:
 
     else:
         parser.print_help()
+
 
 if __name__ == "__main__":
     main()
