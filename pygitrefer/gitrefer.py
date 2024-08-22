@@ -5,7 +5,7 @@ from pygitrefer.pdf_to_doi import pdf_to_doi
 from pygitrefer.utils import validate_doi
 import json
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 import google.generativeai as genai
 from datetime import datetime
 from rich import print
@@ -35,7 +35,7 @@ class Gitrefer:
         self.token = token
         self.repo = repo
         self.gemini_api_key = gemini_api_key
-        load_dotenv()
+        load_dotenv(find_dotenv())
         if not self.token:
             try:
                 self.token = os.environ["GITREFER_TOKEN"]
