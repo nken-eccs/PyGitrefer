@@ -37,7 +37,7 @@ class Gitrefer:
         self.token = token
         self.repo = repo
         self.gemini_api_key = gemini_api_key
-        load_dotenv(find_dotenv())
+        load_dotenv(find_dotenv(usecwd=True))
         if debug:
             print()
             print("Debug mode enabled.")
