@@ -1,6 +1,6 @@
 # 📚 PyGitrefer: Your GitHub-Powered Bibliography Manager!
 
-Welcome to _PyGitrefer_, your daily assistant for effortlessly managing bibliographic information directly within your GitHub repositories!
+Welcome to *PyGitrefer*, your daily assistant for effortlessly managing bibliographic information directly within your GitHub repositories!
 
 Say goodbye to messy spreadsheets and hello to a streamlined, version-controlled, and collaborative approach to keeping your research references in order.
 
@@ -8,7 +8,7 @@ Say goodbye to messy spreadsheets and hello to a streamlined, version-controlled
 
 PyGitrefer is a Python package designed to make managing your references on GitHub a breeze. It allows you to:
 
-* **Manage References:** Easily add new references from DOIs or PDFs, even extracting information automatically if DOIs are not found. You can also add, edit, and remove references manually.
+* **Manage References:** Easily add new references from DOIs or PDFs, even extracting information automatically if DOI is missing. You can also add, edit, and remove references manually.
 * **Attach Files:** Link PDFs, notes, or any relevant files directly to your references.
 * **Organize with Tags:** Categorize your references with custom tags for quick filtering, searching and custom exports.
 * **Version Control:** Leverage the power of Git to track any changes to your references.
@@ -19,6 +19,8 @@ PyGitrefer is a perfect tool for researchers, students, and anyone who wants to 
 
 ## Getting Started 🚀
 
+### Requirements
+
 ### Installation
 
 1. **Install directly from GitHub:**
@@ -27,7 +29,7 @@ PyGitrefer is a perfect tool for researchers, students, and anyone who wants to 
    pip install git+https://github.com/nken-eccs/PyGitrefer.git
    ```
 
-2. **Install as a package using pip (coming soon):**
+2. **Install using pip (coming soon):**
 
    ```bash
    pip install pygitrefer
@@ -42,18 +44,33 @@ You need to set up the following environment variables before you can start usin
 
 2. **Repository Information (`GITREFER_REPO`):**
    - Determine the owner and name of your GitHub repository (e.g., `owner/repository`).
+[!IMPORTANT]
+If you start with a new repository, please create a repository first before initializing PyGitrefer.
 
 3. **Gemini API Key (Optional) (`GITREFER_GEMINI_API_KEY`):**
    - If you want to use the AI-powered reference extraction feature, please get an API key from [Google AI Studio](https://aistudio.google.com/). Anyone who has a Google account can sign up for free.
-   - Currently, Gemini Flash is set as the default model. You can make requests up to 1500 times per day [[source](https://ai.google.dev/pricing)].
+[!NOTE]
+Currently, Gemini Flash is set as the default model. You can make requests up to 1500 times per day [[source](https://ai.google.dev/pricing)].
 
 The easiest way to set these environment variables is to create a `.env` file in the root directory of your project and add the following lines:
 
-```bash
-GITREFER_TOKEN=<your_github_personal_access_token>
-GITREFER_REPO=<owner/repository>
-GITREFER_GEMINI_API_KEY=<your_google_ai_studio_api_key>
-```
+   ```bash:.env
+   GITREFER_TOKEN=<your_github_personal_access_token>
+   GITREFER_REPO=<owner/repository>
+   GITREFER_GEMINI_API_KEY=<your_google_ai_studio_api_key>
+   ```
+
+For exmaple,
+
+   ```bash
+   GITREFER_TOKEN=abcdefgh1234567890
+   GITREFER_REPO=nken-eccs/test-repo
+   GITREFER_GEMINI_API_KEY=1234567890abcdefgh
+   ```
+
+[!CAUTION]
+Keep your `.env` file secure and never share it publicly. It contains sensitive information that could compromise your GitHub account.
+
 
 PyGitrefer will try to load these environment variables when you run the commands. It will search for the `.env` file in the current working directory or higher directories. If these environment variables are not set, you will be prompted to enter them manually.
 
@@ -188,6 +205,7 @@ If you'd like to contribute to this project, please feel free to submit a pull r
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 
 ---
 
