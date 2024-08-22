@@ -42,6 +42,8 @@ You need to set up the following environment variables before you can start usin
 1. **GitHub Personal Access Token (`GITREFER_TOKEN`):**
    - Generate a personal access token on GitHub with `repo` scope.
 
+![](/assets/images/token_repo_scope.png)
+
 2. **Repository Information (`GITREFER_REPO`):**
    - Determine the owner and name of your GitHub repository (e.g., `owner_name/repository_name`).
    - If you start with a new repository, please create a repository first before initializing PyGitrefer!
