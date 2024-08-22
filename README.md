@@ -70,7 +70,7 @@ The easiest way to set these environment variables is to create a `.env` file in
    GITREFER_GEMINI_API_KEY=<your_google_ai_studio_api_key>
    ```
 
-For exmaple,
+For example,
 
    ```bash:.env
    GITREFER_TOKEN=abcdefgh1234567890
