@@ -42,7 +42,9 @@ class Gitrefer:
             print()
             print("Debug mode enabled.")
             print(f"Current directory: {os.getcwd()}")
-            print(f"Environment variables: {os.environ}")
+            print(f"Environment variables:")
+            for key, value in os.environ.items():
+                print(f"'{key}' = '{value}'")
             print()
         if not self.token:
             try:
