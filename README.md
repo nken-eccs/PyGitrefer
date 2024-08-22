@@ -19,6 +19,13 @@ PyGitrefer is a perfect tool for researchers, students, and anyone who wants to 
 
 ## Getting Started 🚀
 
+### Requirements
+
+* **Python 3.11+**
+
+> [!WARNING]
+> With Python 3.12+, building the `pymupdf` package may fail. If you encounter this issue, please use Python 3.11 for now.
+
 ### Installation
 
 1. **Install directly from GitHub:**
