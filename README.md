@@ -208,7 +208,7 @@ Finally, I'm planning to create a GUI interface (Gitrefer) to make it even easie
 
 If you have any feature requests or suggestions, please feel free to open an issue on GitHub.
 
-## Contributions
+## Contributing
 
 If you'd like to contribute to this project, please feel free to submit a pull request or open an issue on GitHub. I really appreciate your support and feedback!
 
